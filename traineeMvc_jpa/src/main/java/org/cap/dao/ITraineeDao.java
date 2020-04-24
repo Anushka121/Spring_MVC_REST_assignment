@@ -11,5 +11,5 @@ public interface ITraineeDao{
     String removeTrainee(int traineeId);
     Trainee findById(int traineeId);
     List<Trainee> traineeList();
-    boolean credentialsCorrect(int id, String password);
+  
 }

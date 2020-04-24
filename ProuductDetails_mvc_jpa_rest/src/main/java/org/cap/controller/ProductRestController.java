@@ -33,7 +33,7 @@ public class ProductRestController {
 	
 	
 	
-	@PostMapping("/product_data/add")// for adding the product
+	@PostMapping("/products_data/add")// for adding the product
     public ResponseEntity<Product> addProduct(@RequestBody ProductDto dto) {
         Product product= convert(dto);
         product=productService.addProduct(product);
@@ -50,7 +50,7 @@ public class ProductRestController {
     }
     
     
-    @GetMapping("/product_data")//for getting the product data
+    @GetMapping("/products_data")//for getting the product data
     public ResponseEntity<List<Product>> fetchAll() {
  List<Product> product=productService.fetchAllProduct();
         ResponseEntity<List<Product>> response = new ResponseEntity<>(product, HttpStatus.OK);
@@ -59,7 +59,7 @@ public class ProductRestController {
     
     
     
-    @GetMapping("/product_data/find/{id}")// for getting product by id
+    @GetMapping("/products_data/find/{id}")// for getting product by id
     		public ResponseEntity<Product> getProduct(@PathVariable("id") int productId) {
         Product product=productService.findById(productId);
         if (product==null)
@@ -83,7 +83,7 @@ public class ProductRestController {
        return response;
 	   
    }
-@DeleteMapping("/product_data/delete/{id}")// deleting by id
+@DeleteMapping("/products_data/delete/{id}")// deleting by id
 public ResponseEntity<String> deleteProduct(@PathVariable("id") int productId)
 {
 	String result=productService.deleteProduct(productId);

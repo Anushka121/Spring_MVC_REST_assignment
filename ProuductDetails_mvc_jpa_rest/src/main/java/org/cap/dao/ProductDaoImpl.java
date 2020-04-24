@@ -24,10 +24,7 @@ public class ProductDaoImpl implements IProductDao{
 	 
 	 @Override
 	public Product addProduct(Product product) {
-		if (product==null)
-		{
-			throw new ProductNotFoundException("Product details are not provided");
-		}
+		
 	return getEntityManager().merge(product);
 	
 	}
@@ -54,10 +51,7 @@ public class ProductDaoImpl implements IProductDao{
 	@Override
 	public String deleteProduct(int productId) {
 		Product product=findById(productId);
-		if(product==null)
-		{
-			throw new ProductNotFoundException("product is not exists");
-		}
+		
       entityManager.remove(product);
      return "Data of specified product is deleted";
 	}

@@ -3,6 +3,7 @@ package org.cap.controller;
 import java.util.List;
 
 import org.cap.entities.Trainee;
+import org.cap.service.AdminService;
 import org.cap.service.ITraineeService;
 import org.cap.session.SessionDetails;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +22,13 @@ public class TraineeController {
     private SessionDetails sessionDetails;
 
 
-    
+    @Autowired
+    private AdminService admin;
 
     @GetMapping("/processlogin")
     public ModelAndView login(@RequestParam("id")int id , @RequestParam("password") String password){
         //checking id and password is correct
-        boolean correct=traineeService.credentialsCorrect(id,password);
+        boolean correct=admin.credentialsCorrect(id,password);
         if(!correct){
          return new ModelAndView("/login");
         }

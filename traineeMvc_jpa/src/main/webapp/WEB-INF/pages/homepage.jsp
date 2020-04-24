@@ -15,7 +15,7 @@
 <br>
 <a href="delete">Delete Trainee  </a>
 <br>
-<a href="view">View All Trainee</a>
+<a href="view">View All</a>
 <br>
 <a href="logout">Logout </a>
 

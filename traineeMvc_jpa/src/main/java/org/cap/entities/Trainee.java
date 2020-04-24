@@ -1,8 +1,14 @@
 package org.cap.entities;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
+@Table(name="Trainees")
 public class Trainee {
 
+@Id
+@GeneratedValue
      private int traineeId;
     private String traineeName;
     private String password;

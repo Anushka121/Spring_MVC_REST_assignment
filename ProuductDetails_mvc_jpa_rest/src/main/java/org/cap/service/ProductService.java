@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 
 import org.cap.dao.IProductDao;
 import org.cap.entities.Product;
+import org.cap.exceptions.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 @Service
@@ -23,6 +24,10 @@ public class ProductService implements IProductService{
 
 	@Override
 	public Product addProduct(Product product) {
+		if(product==null)
+		{
+			throw new ProductNotFoundException("product is not exists");
+		}
 		return productDao.addProduct(product);
 	
 	}
@@ -34,6 +39,7 @@ public class ProductService implements IProductService{
 	
 	@Override
 	public Product findById(int productId) {
+		
 		return productDao.findById(productId);
 	}
 	

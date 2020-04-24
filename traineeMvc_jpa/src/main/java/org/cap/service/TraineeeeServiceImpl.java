@@ -66,12 +66,7 @@ public class TraineeeeServiceImpl implements ITraineeService{
 		List<Trainee> list=traineeDao.traineeList();
 		return list;
 	}
-	@Override
-	public boolean credentialsCorrect(int id, String password) {
-		boolean correct=traineeDao.credentialsCorrect(id, password);
-		return correct;
-	}
-
+	
 	
 
   
